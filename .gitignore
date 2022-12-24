@@ -28,3 +28,7 @@
 
 # Ignore application configuration
 /config/application.yml
+/config/database.yml
+
+# Ignore the schema.rb file because migration can work differently on different machines
+/db/schema.rb
