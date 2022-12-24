@@ -511,6 +511,10 @@ Style/WordArray:
 Lint/AssignmentInCondition:
   AllowSafeAssignment: true
 
+Lint/MissingSuper:
+  Exclude:
+    - 'lib/errors/**/*'
+
 # Align ends correctly.
 Layout/EndAlignment:
   # The value `keyword` means that `end` should be aligned with the matching
