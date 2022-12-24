@@ -1,3 +1,5 @@
 converters:
   values:
     base_62: "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+limits:
+  url_length: 2048
