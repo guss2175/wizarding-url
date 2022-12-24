@@ -3,10 +3,12 @@ git_source(:github){|repo| "https://github.com/#{repo}.git"}
 
 ruby "3.1.2"
 
+gem "active_model_serializers", "~> 0.10.2"
 gem "config"
 gem "figaro"
-gem "pg", "~> 1.1"
+gem "i18n"
 gem "paranoia", "~> 2.2"
+gem "pg", "~> 1.1"
 gem "puma", "~> 5.0"
 gem "rails", "~> 6.1.7"
 # Reduces boot times through caching; required in config/boot.rb

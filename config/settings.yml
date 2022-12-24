@@ -1,5 +1,22 @@
+system:
+  host: "short.est/"
+  counter:
+    starting_point: 10000000000 # pretend we start from this point, the alias will have a length of 6 characters at least
 converters:
   values:
     base_62: "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 limits:
   url_length: 2048
+  alias_length: 7
+http_status_codes:
+  success: 200
+  created: 201
+  bad_request: 400
+  unauthorized: 401
+  forbidden: 403
+  not_found: 404
+  unprocessable_entity: 422
+  no_content: 204
+regex:
+  valid_url: !ruby/regexp /\A((http|https):\/\/)*[A-Za-z0-9]+([\-\.]{1}[A-Za-z0-9]+)*\.[A-Za-z]{2,5}(:[0-9]{1,5})?(\/.*)?\z/
+

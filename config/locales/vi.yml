@@ -1,21 +1,21 @@
-en:
+vi:
   dictionary:
-    too_long: &too_long "is too long (maximum is %{count} characters)"
+    too_long: &too_long "quá dài (tối đa %{count} ký tự)"
   activerecord:
     attributes:
       url:
-        original_url: "Original URL"
-        alias: "Shortened URL"
+        original_url: "Đường dẫn gốc"
+        alias: "Đường dẫn rút gọn"
     errors:
       models:
         url:
           attributes:
             original_url:
               too_long: *too_long
-              invalid: "is not a valid URL"
+              invalid: "không phải đường dẫn hợp lệ"
             alias:
               too_long: *too_long
-              taken: "has already been taken"
+              taken: "đã được sử dụng"
   api:
     errors:
       code:
@@ -45,4 +45,4 @@ en:
         record_not_found: 1100
       messages:
         record_not_found:
-          default: "Couldn't find %{resource}"
+          default: "Không thể tìm thấy %{resource}"
