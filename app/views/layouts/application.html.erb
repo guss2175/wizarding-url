@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Wizard URL</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <%= stylesheet_link_tag "style" %>
+
+  </head>
+  <body>
+  <section class="ftco-section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6 text-center mb-5">
+          <h2 class="heading-section">Wizard URL</h2>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-12">
+          <div class="wrapper img" style="background-image: url(images/img.jpg);">
+            <div class="row">
+              <div class="col-md-9 col-lg-7">
+                <div class="contact-wrap w-100 p-md-5 p-4">
+                  <form id="contactForm" name="contactForm" class="contactForm">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="label" for="#">URL</label>
+                          <input type="text" class="form-control" name="url" id="url" placeholder="Patse your URL here...">
+                          <input type="hidden" name="action_type" id="action_type">
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <input type="submit" value="Encode" class="btn btn-primary" id="encode">
+                          <input type="submit" value="Decode" class="btn btn-primary" id="decode">
+                          <div class="submitting"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                  <div id="form-message-warning" class="col-md-12" style="word-wrap:break-word"></div>
+                  <div id="form-message-success" class="col-md-12" style="word-wrap:break-word"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <%= javascript_include_tag "jquery", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "popper", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "bootstrap", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "jquery.validate", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "main", "data-turbolinks-track" => true %>
+
+  </body>
+</html>
+
