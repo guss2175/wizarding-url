@@ -36,8 +36,6 @@
 					}
 
 					$.ajax({   	
-				      // type: "POST",
-				      // url: "api/v1/urls/encode",
 							type: type,
 							url: url,
 				      data: $(form).serialize(),
@@ -68,12 +66,6 @@
                	setTimeout(function(){
 	              	$submit.css('display', 'none').text(waitText);
 	               }, 1400);
-
-               	// setTimeout(function(){
-               	// 	$('#contactForm' ).each(function(){
-								// 	    this.reset();
-								// 	});
-               	// }, 1400);
 				      },
 				      error: function(res) {
 				      	console.log(res);
