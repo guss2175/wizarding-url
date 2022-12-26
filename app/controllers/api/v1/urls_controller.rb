@@ -12,9 +12,15 @@ module Api::V1
 
     # GET api/v1/urls/decode
     def decode
-      url = Url.find_by! alias: params[:url]
+      url = Url.find_by! alias: extract_alias
 
       render_success ApiResponse.to_hash UrlSerializer.new(url, type: :basic_info)
+    end
+
+    private
+
+    def extract_alias
+      params[:url]&.gsub Settings.system.host, ""
     end
   end
 end
