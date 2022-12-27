@@ -1,10 +1,10 @@
 class UrlSerializer < ApplicationSerializer
-  DEFAULT = %i(id original_url alias).freeze
-  BASIC_INFO = %i(original_url alias).freeze
+  DEFAULT = %i(id original_url alias_url).freeze
+  BASIC_INFO = %i(original_url alias_url).freeze
 
   attributes(*DEFAULT)
 
-  def alias
-    object.full_alias
+  def alias_url
+    object.full_alias_url
   end
 end

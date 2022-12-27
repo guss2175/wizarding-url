@@ -1,9 +1,9 @@
 class Url < ApplicationRecord
   acts_as_paranoid
 
-  validates :alias, presence: true,
-                    uniqueness: {scope: %i(original_url deleted_at)},
-                    length: {maximum: Settings.limits.alias_length}
+  validates :alias_url, presence: true,
+                        uniqueness: {scope: %i(original_url deleted_at)},
+                        length: {maximum: Settings.limits.alias_url_length}
   validates :original_url, presence: true,
                            length: {maximum: Settings.limits.url_length},
                            format: {with: Settings.regex.valid_url, message: :invalid}
@@ -15,7 +15,7 @@ class Url < ApplicationRecord
     end
   end
 
-  def full_alias
-    Settings.system.host + self.alias
+  def full_alias_url
+    Settings.system.host + alias_url
   end
 end

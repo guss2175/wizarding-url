@@ -5,7 +5,7 @@ vi:
     attributes:
       url:
         original_url: "Đường dẫn gốc"
-        alias: "Đường dẫn rút gọn"
+        alias_url: "Đường dẫn rút gọn"
     errors:
       models:
         url:
@@ -13,7 +13,7 @@ vi:
             original_url:
               too_long: *too_long
               invalid: "không phải đường dẫn hợp lệ"
-            alias:
+            alias_url:
               too_long: *too_long
               taken: "đã được sử dụng"
   api:
