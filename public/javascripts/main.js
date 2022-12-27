@@ -4,11 +4,9 @@
 
 	$("#decode").click(() => {
 		$("#action_type").val("decode");
-		console.log($("#action_type").val())
 	})
 	$("#encode").click(() => {
 		$("#action_type").val("encode");
-		console.log($("#action_type").val())
 	})
 
   // Form
@@ -21,10 +19,9 @@
 				messages: {
 					url: "Please enter your URL"
 				},
-				
-				submitHandler: function(form) {		
+
+				submitHandler: function(form) {
 					var $submit = $('.submitting'), waitText = 'Submitting...';
-					console.log($(form).serialize());
 					var url, type;
 					if ($("#action_type").val() == "encode") {
 						type = "POST";
@@ -35,12 +32,12 @@
 						url = "api/v1/urls/decode";
 					}
 
-					$.ajax({   	
+					$.ajax({
 							type: type,
 							url: url,
 				      data: $(form).serialize(),
 
-				      beforeSend: function() { 
+				      beforeSend: function() {
 				      	$submit.css('display', 'block').text(waitText);
 				      	$('#form-message-warning').hide();
 		            $('#form-message-success').hide();
@@ -52,7 +49,7 @@
 
 		            var result_url;
 		            if (type == "POST") {
-		            	result_url = result['data']['alias']
+		            	result_url = result['data']['alias_url']
 		            }
 		            else {
 		            	result_url = result['data']['original_url']
@@ -68,7 +65,6 @@
 	               }, 1400);
 				      },
 				      error: function(res) {
-				      	console.log(res);
 				      	$('#form-message-warning').html("Something went wrong. Please try again.");
 				        $('#form-message-warning').fadeIn();
 				        $submit.css('display', 'none');
