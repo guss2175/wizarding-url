@@ -4,7 +4,7 @@ module Api::V1
     def encode
       url = Url.create!(
         original_url: params[:url],
-        alias: Converters::Base62.encode(Url.secret_key)
+        alias_url: Converters::Base62.encode(Url.secret_key)
       )
 
       render_created ApiResponse.to_hash UrlSerializer.new(url)
@@ -12,14 +12,14 @@ module Api::V1
 
     # GET api/v1/urls/decode
     def decode
-      url = Url.find_by! alias: extract_alias
+      url = Url.find_by! alias_url: extract_alias_url
 
       render_success ApiResponse.to_hash UrlSerializer.new(url, type: :basic_info)
     end
 
     private
 
-    def extract_alias
+    def extract_alias_url
       params[:url]&.gsub Settings.system.host, ""
     end
   end

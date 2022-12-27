@@ -5,7 +5,7 @@ en:
     attributes:
       url:
         original_url: "Original URL"
-        alias: "Shortened URL"
+        alias_url: "Shortened URL"
     errors:
       models:
         url:
@@ -13,7 +13,7 @@ en:
             original_url:
               too_long: *too_long
               invalid: "is not a valid URL"
-            alias:
+            alias_url:
               too_long: *too_long
               taken: "has already been taken"
   api:
