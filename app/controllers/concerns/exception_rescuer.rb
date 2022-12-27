@@ -9,10 +9,10 @@ module ExceptionRescuer
   private
 
   def handle_record_not_found! exception
-    render_not_found Errors::ActiveRecordNotFound.new(exception).to_hash
+    render_not_found Errors::ActiveRecordNotFound.to_hash(exception)
   end
 
   def handle_unprocessable_entity! exception
-    render_unprocessable_entity Errors::ActiveRecordValidation.new(exception.record).to_hash
+    render_unprocessable_entity Errors::ActiveRecordValidation.to_hash(exception.record)
   end
 end
